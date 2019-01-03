@@ -73,18 +73,19 @@ WelcomeNumbers22= num2str(WelcomeNumbers2);
 set(handles.Lottery_Numbers, 'string', WelcomeNumbers11)
 %setting the above as Players Numbers upon opening GUI
 set(handles.Your_Numbers, 'string', WelcomeNumbers22)
-%Setting the congratulations text
- X0= 'Unfortunately, You have no Matches this time. Try Again!';
- X1= 'Congratulations! You matched 1 number. You won £3!';
- X2= 'Congratulations! You matched 2 numbers. You won £20!';
- X3= 'Congratulations! You matched 3 numbers. You won £200!';
- X4= 'Congratulations! You matched 4 numbers. You won £10,000!';
- X5= 'Congratulations! You matched 5 numbers. You won £100,000!';
- X6= 'Congratulations! You matched 6 numbers. You won £500,000!';
- X7= 'Congratulations! You matched 7 numbers. Thats a jackpot! You won £2,000,000!';
 %setting matching number function
  matching_numbers= intersect(WelcomeNumbers1,WelcomeNumbers2);
  nom1= numel(matching_numbers);
+%Setting the congratulations text
+ X0= 'Unfortunately, You have no Matches this time. Try Again!';
+ X1= {'Congratulations! You matched 1 number:', num2str(matching_numbers), '. You won £3!'};
+ X2= {'Congratulations! You matched 2 numbers:', num2str(matching_numbers), '. You won £20!'};
+ X3= {'Congratulations! You matched 3 numbers:', num2str(matching_numbers), '. You won £200!'};
+ X4= {'Congratulations! You matched 4 numbers:', num2str(matching_numbers), '. You won £10,000!'};
+ X5= {'Congratulations! You matched 5 numbers:', num2str(matching_numbers), '. You won £100,000!'};
+ X6= {'Congratulations! You matched 6 numbers:', num2str(matching_numbers), '. You won £500,000!'};
+ X7= {'Congratulations! You matched 7 numbers:', num2str(matching_numbers), '. Thats a jackpot! You won £2,000,000!'};
+
  %setting the congratulations text based upon matching numbers
 if nom1==0
     set(handles.CongratsText1, 'string', X0)
@@ -134,16 +135,19 @@ NewNumbers11= num2str(NewNumbers1);
 WelcomeNumbers3= get(handles.Lottery_Numbers, 'string')
 %Setting New Set of Numbers in 'Your Numbers' box
 set(handles.Your_Numbers, 'string', NewNumbers11);
- X0= 'Unfortunately, You have no Matches this time. Try Again!';
- X1= 'Congratulations! You matched 1 number. You won £3!';
- X2= 'Congratulations! You matched 2 numbers. You won £20!';
- X3= 'Congratulations! You matched 3 numbers. You won £200!';
- X4= 'Congratulations! You matched 4 numbers. You won £10,000!';
- X5= 'Congratulations! You matched 5 numbers. You won £100,000!';
- X6= 'Congratulations! You matched 6 numbers. You won £500,000!';
- X7= 'Congratulations! You matched 7 numbers. Thats a jackpot! You won £2,000,000!';
+%setting matching number function
 matching_numbers2= intersect(WelcomeNumbers3,NewNumbers1);
  nom2= numel(matching_numbers2);
+%Setting the congratulations text
+ X0= 'Unfortunately, You have no Matches this time. Try Again!';
+ X1= {'Congratulations! You matched 1 number:', num2str(matching_numbers2), '. You won £3!'};
+ X2= {'Congratulations! You matched 2 numbers:', num2str(matching_numbers2), '. You won £20!'};
+ X3= {'Congratulations! You matched 3 numbers:', num2str(matching_numbers2), '. You won £200!'};
+ X4= {'Congratulations! You matched 4 numbers:', num2str(matching_numbers2), '. You won £10,000!'};
+ X5= {'Congratulations! You matched 5 numbers:', num2str(matching_numbers2), '. You won £100,000!'};
+ X6= {'Congratulations! You matched 6 numbers:', num2str(matching_numbers2), '. You won £500,000!'};
+ X7= {'Congratulations! You matched 7 numbers:', num2str(matching_numbers2), '. Thats a jackpot! You won £2,000,000!'};
+
  %setting the congratulations text based upon matching numbers
 if nom2==0
     set(handles.CongratsText1, 'string', X0)
